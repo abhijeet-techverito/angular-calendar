@@ -5,4 +5,12 @@
     library, including month, week and day views, draggable and resizable
     events, custom templates, date adapters and internationalisation.
   </p>
+  <h2>Team</h2>
+  <ul class="list-unstyled">
+    @for (member of team; track member.name) {
+      <li>
+        <strong>{{ member.name }}</strong> &mdash; {{ member.role }}
+      </li>
+    }
+  </ul>
 </div>
