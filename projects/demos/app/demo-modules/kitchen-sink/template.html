@@ -120,9 +120,15 @@
           <input
             type="text"
             class="form-control"
+            required
+            #titleInput="ngModel"
+            [class.is-invalid]="titleInput.invalid"
             [(ngModel)]="event.title"
             (keyup)="refresh.next()"
           />
+          @if (titleInput.invalid) {
+          <div class="invalid-feedback d-block">Title is required</div>
+          }
         </td>
         <td>
           <input
