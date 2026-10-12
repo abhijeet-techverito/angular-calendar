@@ -9,6 +9,16 @@
 
     <button
       type="button"
+      class="btn btn-outline-secondary"
+      (click)="toggleDarkMode()"
+      [attr.aria-pressed]="isDarkMode"
+    >
+      <i class="fas" [ngClass]="isDarkMode ? 'fa-sun' : 'fa-moon'"></i>
+      {{ isDarkMode ? 'Light mode' : 'Dark mode' }}
+    </button>
+
+    <button
+      type="button"
       class="navbar-toggler"
       (click)="isMenuVisible = !isMenuVisible"
     >

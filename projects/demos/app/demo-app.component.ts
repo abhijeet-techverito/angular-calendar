@@ -155,6 +155,7 @@ export class DemoAppComponent implements OnInit {
   filteredDemos: Demo[] = [];
   activeDemo: Demo;
   isMenuVisible = false;
+  isDarkMode = false;
   firstDemoLoaded = false;
   searchText = '';
   copied$ = new Subject<boolean>();
@@ -213,6 +214,11 @@ export class DemoAppComponent implements OnInit {
     script.setAttribute('data-uid', '7c1627e655');
     script.src = 'https://angular-calendar.ck.page/7c1627e655/index.js';
     document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  toggleDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark', this.isDarkMode);
   }
 
   updateFilteredDemos() {
