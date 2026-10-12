@@ -502,6 +502,14 @@ bootstrapApplication(DemoAppComponent, {
           },
         },
         {
+          path: 'about',
+          loadComponent: () =>
+            import('./app/about/about.component').then((c) => c.AboutComponent),
+          data: {
+            label: 'About',
+          },
+        },
+        {
           path: '**',
           redirectTo: 'kitchen-sink',
         },
